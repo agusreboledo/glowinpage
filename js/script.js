@@ -91,12 +91,7 @@ addEventOnElem(window, "scroll", scrollReveal);
 class Sistema {
   constructor() {
     this.productos = [];
-    this.agregarRegistro(
-      1,
-      "limpiador facial",
-      39.99,
-      "./img/product-01.jpg"
-    );
+    this.agregarRegistro(1, "limpiador facial", 39.99, "./img/product-01.jpg");
     this.agregarRegistro(
       2,
       "Bio-shroom Rejuvenecimiento",
@@ -109,12 +104,7 @@ class Sistema {
       39.99,
       "./img/product-03.jpg"
     );
-    this.agregarRegistro(
-      4,
-      "limpiador de pies",
-      39.99,
-      "./img/product-04.jpg"
-    );
+    this.agregarRegistro(4, "limpiador de pies", 39.99, "./img/product-04.jpg");
     this.agregarRegistro(
       5,
       "Crema para oidos con cafeína en grano de café",
@@ -130,43 +120,52 @@ class Sistema {
     this.productos2 = [];
     this.agregarRegistro2(
       7,
-      "limpiador de manos",
+      "limpiador de nariz",
       39.99,
-      "./img/product-06.jpg"
+      "./img/product-07.jpg"
     );
     this.agregarRegistro2(
       8,
-      "limpiador de manos",
+      "crema para uñas",
       39.99,
-      "./img/product-06.jpg"
+      "./img/product-08.jpg"
     );
     this.agregarRegistro2(
       9,
-      "limpiador de manos",
+      "perfume fragancia Coco",
       39.99,
-      "./img/product-06.jpg"
+      "./img/product-09.jpg"
     );
     this.agregarRegistro2(
       10,
-      "limpiador de manos",
+      "gotas canabicas",
       39.99,
-      "./img/product-06.jpg"
+      "./img/product-10.jpg"
     );
     this.agregarRegistro2(
       11,
-      "limpiador de manos",
+      "aromatizador fragancia Natural",
       39.99,
-      "./img/product-06.jpg"
+      "./img/product-11.jpg"
     );
     this.agregarRegistro2(
       12,
-      "limpiador de manos",
+      "aromatizado fragancia Naranja",
       39.99,
-      "./img/product-06.jpg"
+      "./img/product-15.jpg"
     );
-
-    
-
+    this.agregarRegistro2(
+      12,
+      "gotas de jengibre para el pelo",
+      39.99,
+      "./img/product-16.jpg"
+    );
+    this.agregarRegistro2(
+      12,
+      "perfume de ropa fragancia Frutilla",
+      39.99,
+      "./img/product-17.jpg"
+    );
   }
   agregarRegistro(id, nombre, precio, imagen) {
     const producto = new Producto(id, nombre, precio, imagen);
@@ -374,7 +373,6 @@ function cargarProductos2(productos) {
   }
 }
 
-let sistema=new Sistema;
+let sistema = new Sistema();
 cargarProductos(sistema.productos);
 cargarProductos2(sistema.productos2);
-
