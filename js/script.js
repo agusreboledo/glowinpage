@@ -1,7 +1,3 @@
-
-
-
-
 /**
  * add event on element
  */
@@ -167,14 +163,14 @@ class Sistema {
     const producto = new Producto(id, nombre, precio, imagen);
     this.productos2.push(producto);
   }
- 
-  darProductos(){
+
+  darProductos() {
     return this.productos;
   }
 }
 let sistema = new Sistema();
 
-const productos = sistema.darProductos(); 
+const productos = sistema.darProductos();
 function registrosPorId(id) {
   return productos.filter((producto) => producto.id == id);
 }
@@ -216,7 +212,7 @@ class Carrito {
     localStorage.removeItem("carrito");
     this.listar();
   }
- 
+
   estaEnCarrito({ id }) {
     return this.carrito.find((producto) => producto.id === id);
   }
@@ -275,12 +271,14 @@ class Carrito {
     }
     localStorage.setItem("carrito", JSON.stringify(this.carrito));
     this.listar();
-    document.getElementById("botonComprar").addEventListener("click", (event) => {
-      event.preventDefault();
-      
-      // Vacíamos el carrito
-      carrito.vaciar();
-    });
+    document
+      .getElementById("botonComprar")
+      .addEventListener("click", (event) => {
+        event.preventDefault();
+
+        // Vacíamos el carrito
+        carrito.vaciar();
+      });
   }
 }
 
@@ -442,8 +440,3 @@ let carrito = new Carrito();
 
 cargarProductos(sistema.productos);
 cargarProductos2(sistema.productos2);
-
-
-
-
-
