@@ -86,6 +86,21 @@ scrollReveal();
 
 addEventOnElem(window, "scroll", scrollReveal);
 
+class Producto {
+  constructor(
+    idProducto,
+    nombreProducto,
+    precioProducto,
+    unaImagen,
+    cantidadProducto
+  ) {
+    this.id = idProducto;
+    this.nombre = nombreProducto;
+    this.precio = precioProducto;
+    this.imagen = unaImagen;
+    this.cantidad = cantidadProducto;
+  }
+}
 class Sistema {
   constructor() {
     this.productos = [];
@@ -174,21 +189,7 @@ const productos = sistema.darProductos();
 function registrosPorId(id) {
   return productos.filter((producto) => producto.id == id);
 }
-class Producto {
-  constructor(
-    idProducto,
-    nombreProducto,
-    precioProducto,
-    unaImagen,
-    cantidadProducto
-  ) {
-    this.id = idProducto;
-    this.nombre = nombreProducto;
-    this.precio = precioProducto;
-    this.imagen = unaImagen;
-    this.cantidad = cantidadProducto;
-  }
-}
+
 class Carrito {
   constructor() {
     const carritoStorage = JSON.parse(localStorage.getItem("carrito"));
