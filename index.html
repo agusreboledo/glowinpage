@@ -86,18 +86,27 @@
               <span class="btn-badge">0</span>
             </button>
 
-            <div class="container">
-              <nav class="nav-cart">
+            <div class id="container">
+              <nav id="carrito" class="nav-cart">
                 <i class="fa-solid fa-cart-shopping" style="color: #000000">
                   <div class="buy-card">
                     <ul class="nav-card">
+                      <li>Imagen</li>
                       <li>Nombre</li>
                       <li>Precio</li>
                       <li>Cantidad</li>
                     </ul>
-                    <button class="button-vaciarCarrito" id="boton-vaciarCarrito">Vaciar Carrito</button>
-                  </div></i
-                >
+                    <h1 class="cantidadProductos">
+                      <span  id="cantidadProductos">0</span>
+                    </h1>
+                    <div class="contenedorCarrito" id="divCarro">
+
+
+                    </div>
+                    
+                    <p class="totalCarrito">Total: $<span id="totalCarrito">0</span></p>
+                  </div>
+                </i>
               </nav>
             </div>
           </div>
@@ -366,9 +375,7 @@
               </a>
             </div>
 
-            <ul class="has-scrollbar" id="contenedor-productos">
-              <!--Productos-->
-            </ul>
+            <ul class="has-scrollbar" id="contenedor-productos"></ul>
           </div>
         </section>
 
@@ -403,7 +410,7 @@
                     <span class="badge" aria-label="20% off">-20%</span>
 
                     <div class="card-actions">
-                      <button class="action-btn" aria-label="add to cart">
+                      <button class="agregar-carrito" aria-label="add to cart">
                         <ion-icon
                           name="bag-handle-outline"
                           aria-hidden="true"
@@ -468,7 +475,7 @@
                     />
 
                     <div class="card-actions">
-                      <button class="action-btn" aria-label="add to cart">
+                      <button class="agregar-carrito" aria-label="add to cart">
                         <ion-icon
                           name="bag-handle-outline"
                           aria-hidden="true"
@@ -533,7 +540,7 @@
                     />
 
                     <div class="card-actions">
-                      <button class="action-btn" aria-label="add to cart">
+                      <button class="agregar-carrito" aria-label="add to cart">
                         <ion-icon
                           name="bag-handle-outline"
                           aria-hidden="true"
@@ -598,7 +605,7 @@
                     />
 
                     <div class="card-actions">
-                      <button class="action-btn" aria-label="add to cart">
+                      <button class="agregar-carrito" aria-label="add to cart">
                         <ion-icon
                           name="bag-handle-outline"
                           aria-hidden="true"
@@ -663,7 +670,7 @@
                     <span class="badge" aria-label="20% off">-20%</span>
 
                     <div class="card-actions">
-                      <button class="action-btn" aria-label="add to cart">
+                      <button class="agregar-carrito" aria-label="add to cart">
                         <ion-icon
                           name="bag-handle-outline"
                           aria-hidden="true"
@@ -730,7 +737,7 @@
                     />
 
                     <div class="card-actions">
-                      <button class="action-btn" aria-label="add to cart">
+                      <button class="agregar-carrito" aria-label="add to cart">
                         <ion-icon
                           name="bag-handle-outline"
                           aria-hidden="true"

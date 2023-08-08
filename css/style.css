@@ -370,13 +370,13 @@ body {
   width: 100%;
 }
 
-[data-section]>* {
+[data-section] > * {
   transform: translateY(100px);
   opacity: 0;
   transition: var(--transition-3);
 }
 
-[data-section].active>* {
+[data-section].active > * {
   transform: translateY(0);
   opacity: 1;
 }
@@ -993,7 +993,7 @@ body {
   color: var(--hoockers-green);
 }
 
-.footer-bottom>img {
+.footer-bottom > img {
   max-width: max-content;
 }
 
@@ -1505,7 +1505,7 @@ body {
   display: none;
 }
 
-.container .nav-cart i:hover>.buy-card {
+.container .nav-cart i:hover > .buy-card {
   width: 400px;
   height: 400px;
   position: absolute;
@@ -1515,7 +1515,7 @@ body {
   z-index: 20;
 }
 
-.container nav i:hover .buy-card>button {
+.container nav i:hover .buy-card > button {
   display: block;
   width: 90%;
   padding: 1rem;
@@ -1533,7 +1533,7 @@ body {
   margin: 0 10px 0 10px;
   border-bottom: solid thin #e1e1e1;
 }
-.container nav i{
+.container nav i {
   font-size: 3rem;
   cursor: pointer;
 }
@@ -1542,7 +1542,64 @@ body {
   padding: 1rem;
   font-weight: bold;
 }
-.container nav i:hover .buy-card > button:hover{
+.container nav i:hover .buy-card > button:hover {
   border: solid thin #494848;
-  transition: all .4s;
+  transition: all 0.4s;
 }
+
+/*acomodar lps elementos de carritos*/
+
+.lista_de_productos {
+  display: none;
+  text-align: center;
+  padding: 10px 0 0 0;
+  border-top: solid thin gray;
+}
+
+.container .nav-cart i:hover .buy-card > .lista_de_productos {
+  display: flex;
+}
+.totalCarrito {
+  display: none;
+  font-size: 15px;
+}
+
+.container nav i:hover .buy-card > .totalCarrito {
+display: block;
+font-size: 15px;
+}
+
+.lista_de_productos img {
+  width: 100px;
+}
+
+.lista_de_productos p {
+  width: 300px;
+  font-size: 1.4rem;
+}
+
+.lista_de_productos p:nth-child(3){
+  padding-left: 30px;
+}
+
+.lista_de_productos p:nth-child(4){
+  padding-left: 60px;
+}
+
+.lista_de_productos p:last-child span {
+  background-color:  red;
+  border-radius: 50%;
+  padding: 5px 10px;
+  color: #fff;
+}
+.oculto {
+  display: none;
+}
+
+.cantidadProductos {
+  display: none;
+}
+.container nav i:hover .buy-card > .cantidadProductos {
+  display: block !important;
+  font-size: 15px;
+  }
