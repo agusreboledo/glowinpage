@@ -23,6 +23,11 @@
     <link rel="preload" as="image" href="./img/hero-banner-1.jpg" />
     <link rel="preload" as="image" href="./img/hero-banner-2.jpg" />
     <link rel="preload" as="image" href="./img/hero-banner-3.jpg" />
+
+    <script
+      src="https://kit.fontawesome.com/05b0b385f4.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
 
   <body id="top">
@@ -81,23 +86,20 @@
               <span class="btn-badge">0</span>
             </button>
 
-            <button class="header-action-btn" aria-label="cart item">
-              <ion-icon
-                name="bag-handle-outline"
-                aria-hidden="true"
-                aria-hidden="true"
-              ></ion-icon>
-              <div class="container">
-                <div class="buy-card">
-                  <ul class="nav-card">
-                    <li></li>
-                    <li>Nombre</li>
-                    <li>Precio</li>
-                    <li>Cantidad</li>
-                  </ul>
-                </div>
-              </div>
-            </button>
+            <div class="container">
+              <nav class="nav-cart">
+                <i class="fa-solid fa-cart-shopping" style="color: #000000">
+                  <div class="buy-card">
+                    <ul class="nav-card">
+                      <li>Nombre</li>
+                      <li>Precio</li>
+                      <li>Cantidad</li>
+                    </ul>
+                    <button class="button-vaciarCarrito" id="boton-vaciarCarrito">Vaciar Carrito</button>
+                  </div></i
+                >
+              </nav>
+            </div>
           </div>
 
           <nav class="navbar">

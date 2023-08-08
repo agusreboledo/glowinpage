@@ -323,6 +323,7 @@ body {
   0% {
     transform: skewX(-25deg) translateX(0);
   }
+
   100% {
     transform: skewX(-25deg) translateX(250%);
   }
@@ -369,13 +370,13 @@ body {
   width: 100%;
 }
 
-[data-section] > * {
+[data-section]>* {
   transform: translateY(100px);
   opacity: 0;
   transition: var(--transition-3);
 }
 
-[data-section].active > * {
+[data-section].active>* {
   transform: translateY(0);
   opacity: 1;
 }
@@ -992,7 +993,7 @@ body {
   color: var(--hoockers-green);
 }
 
-.footer-bottom > img {
+.footer-bottom>img {
   max-width: max-content;
 }
 
@@ -1389,6 +1390,7 @@ body {
     display: flex;
     align-items: center;
     gap: 10px;
+    flex-direction: column;
   }
 
   .header-action-btn .btn-text {
@@ -1493,4 +1495,54 @@ body {
   .offer .container {
     gap: 120px;
   }
+}
+
+.nav-card {
+  display: none;
+}
+
+.button-vaciarCarrito {
+  display: none;
+}
+
+.container .nav-cart i:hover>.buy-card {
+  width: 400px;
+  height: 400px;
+  position: absolute;
+  top: 100px;
+  right: 0;
+  background-color: #fff;
+  z-index: 20;
+}
+
+.container nav i:hover .buy-card>button {
+  display: block;
+  width: 90%;
+  padding: 1rem;
+  margin: 10px auto;
+  background-color: transparent;
+  border: solid thin #e1e1e1;
+  color: #494848;
+  cursor: pointer;
+}
+
+.container nav i:hover .nav-card {
+  font-size: 1.4rem;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 10px 0 10px;
+  border-bottom: solid thin #e1e1e1;
+}
+.container nav i{
+  font-size: 3rem;
+  cursor: pointer;
+}
+
+.nav-card li {
+  padding: 1rem;
+  font-weight: bold;
+}
+.container nav i:hover .buy-card > button:hover{
+  border: solid thin #494848;
+  transition: all .4s;
 }
