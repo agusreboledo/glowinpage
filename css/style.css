@@ -1565,8 +1565,8 @@ body {
 }
 
 .container nav i:hover .buy-card > .totalCarrito {
-display: block;
-font-size: 15px;
+  display: block;
+  font-size: 15px;
 }
 
 .lista_de_productos img {
@@ -1578,16 +1578,16 @@ font-size: 15px;
   font-size: 1.4rem;
 }
 
-.lista_de_productos p:nth-child(3){
+.lista_de_productos p:nth-child(3) {
   padding-left: 30px;
 }
 
-.lista_de_productos p:nth-child(4){
+.lista_de_productos p:nth-child(4) {
   padding-left: 60px;
 }
 
 .lista_de_productos p:last-child span {
-  background-color:  red;
+  background-color: red;
   border-radius: 50%;
   padding: 5px 10px;
   color: #fff;
@@ -1602,4 +1602,21 @@ font-size: 15px;
 .container nav i:hover .buy-card > .cantidadProductos {
   display: block !important;
   font-size: 15px;
-  }
+}
+
+#botonComprar {
+  display: none;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.container nav i:hover .buy-card .contenedorCarrito > #botonComprar {
+  display: block !important;
+  font-size: 15px;
+}
+
+.buy-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}

@@ -246,7 +246,7 @@ class Carrito {
       this.total += producto.precio * producto.cantidad;
       this.totalProductos += producto.cantidad;
     }
-    divCarrito.innerHTML += `<button id="botonComprar" class="btn">Comprar</button>`;
+    divCarrito.innerHTML += `<button id="botonComprar" class="btn">comprar</button>`;
     if (this.totalProductos > 0) {
       botonComprar.classList.remove("oculto");
     } else {
@@ -261,7 +261,7 @@ class Carrito {
     }
     document.getElementById("cantidadProductos").innerText =
       "Cantidad de productos: " + this.totalProductos;
-    document.getElementById("totalCarrito").innerText = +this.total;
+    document.getElementById("totalCarrito").innerText = +Math.trunc(this.total);
   }
   quitar(id) {
     const indice = this.carrito.findIndex((producto) => producto.id === id);
@@ -435,6 +435,15 @@ function cargarProductos2(productos) {
         </div>
       </div>
     </li>`;
+  }
+  const botonesAgregar = document.querySelectorAll(".botonAgregar");
+  for (const boton of botonesAgregar) {
+    boton.addEventListener("click", (e) => {
+      e.preventDefault();
+      const id = boton.dataset.id;
+      const producto = registrosPorId(id);
+      carrito.agregarProductoCarrito(producto[0]);
+    });
   }
 }
 let carrito = new Carrito();
