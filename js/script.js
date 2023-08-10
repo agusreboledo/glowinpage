@@ -214,6 +214,7 @@ class Carrito {
     this.listar();
   }
 
+  
   estaEnCarrito({ id }) {
     return this.carrito.find((producto) => producto.id === id);
   }
@@ -364,89 +365,28 @@ function cargarProductos(productos) {
     });
   }
 }
-
-function cargarProductos2(productos) {
-  let divProductos = document.getElementById("contenedor-productos2");
-  divProductos.innerHTML = "";
-  for (const producto of productos) {
-    divProductos.innerHTML += `  <li class="scrollbar-item">
-      <div class="shop-card">
-        <div
-          class="card-banner img-holder"
-          style="--width: 540; --height: 720"
-        >
-          <img
-            src="${producto.imagen}"
-            width="540"
-            height="720"
-            loading="lazy"
-            alt="Facial cleanser"
-            class="img-cover"
-          />
-
-          <span class="badge" aria-label="20% off">-20%</span>
-
-          <div class="card-actions">
-            <button class="action-btn carrito botonAgregar" aria-label="add to cart" data-id="${producto.id}">
-              <ion-icon
-                name="bag-handle-outline"
-                aria-hidden="true"
-              ></ion-icon>
-            </button>
-
-            <button class="action-btn carrito" aria-label="add to whishlist">
-              <ion-icon
-                name="star-outline"
-                aria-hidden="true"
-              ></ion-icon>
-            </button>
-
-            <button class="action-btn carrito" aria-label="compare">
-              <ion-icon
-                name="repeat-outline"
-                aria-hidden="true"
-              ></ion-icon>
-            </button>
-          </div>
-        </div>
-
-        <div class="card-content">
-          <div class="price">
-            <del class="del">$${producto.precio}</del>  
-
-            <span class="span">$29.00</span> 
-          </div>
-
-          <h3>
-            <a href="#" class="card-title"> ${producto.nombre}</a>
-          </h3>
-
-          <div class="card-rating">
-            <div class="rating-wrapper" aria-label="5 start rating">
-              <ion-icon name="star" aria-hidden="true"></ion-icon>
-              <ion-icon name="star" aria-hidden="true"></ion-icon>
-              <ion-icon name="star" aria-hidden="true"></ion-icon>
-              <ion-icon name="star" aria-hidden="true"></ion-icon>
-              <ion-icon name="star" aria-hidden="true"></ion-icon>
-            </div>
-
-            <p class="rating-text">5170 reviews</p>
-          </div>
-        </div>
-      </div>
-    </li>`;
-  }
-  const botonesAgregar = document.querySelectorAll(".botonAgregar");
-  for (const boton of botonesAgregar) {
-    boton.addEventListener("click", (e) => {
-      e.preventDefault();
-      const id = boton.dataset.id;
-      const producto = registrosPorId(id);
-      carrito.agregarProductoCarrito(producto[0]);
-    });
-  }
+const botonesAgregar = document.querySelectorAll(".botonAgregar");
+for (const boton of botonesAgregar) {
+  boton.addEventListener("click", (e) => {
+    e.preventDefault();
+    const id = boton.dataset.id;
+    const producto = registrosPorId(id);
+    carrito.agregarProductoCarrito(producto[0]);
+  });
 }
+const botonAgregar = document.querySelectorAll(".botonAgregar");
+for (const boton of botonesAgregar) {
+  boton.addEventListener("click", (e) => {
+    e.preventDefault();
+    const id = boton.dataset.id;
+    const producto = registrosPorId(id);
+    carrito.agregarProductoCarrito(producto[12]);
+  });
+}
+
+
 let carrito = new Carrito();
 
 cargarProductos(sistema.productos);
-cargarProductos2(sistema.productos2);
+
+
