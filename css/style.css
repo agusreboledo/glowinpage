@@ -1550,7 +1550,6 @@ body {
 /*acomodar lps elementos de carritos*/
 
 .lista_de_productos {
-  display: none;
   text-align: center;
   padding: 10px 0 0 0;
   border-top: solid thin gray;

@@ -214,7 +214,6 @@ class Carrito {
     this.listar();
   }
 
-  
   estaEnCarrito({ id }) {
     return this.carrito.find((producto) => producto.id === id);
   }
@@ -225,7 +224,8 @@ class Carrito {
     const divCarrito = document.querySelector("#divCarro");
     divCarrito.innerHTML = "";
     for (const producto of this.carrito) {
-      divCarrito.innerHTML += `
+      const card = document.createElement("div");
+      card.innerHTML += `
          
           <div class="producto">
           <div class="lista_de_productos">
@@ -243,6 +243,7 @@ class Carrito {
             Vaciar Carrito
           </a>
         </div>`;
+        divCarrito.appendChild(card)
 
       this.total += producto.precio * producto.cantidad;
       this.totalProductos += producto.cantidad;
@@ -253,6 +254,19 @@ class Carrito {
     } else {
       botonComprar.classList.add("oculto");
     }
+    document
+      .getElementById("botonComprar")
+      .addEventListener("click", (event) => {
+        event.preventDefault();
+        Toastify({
+          text: "Gracias por su compra",
+  
+          duration: 3000,
+        }).showToast();
+
+        // Vacíamos el carrito
+        carrito.vaciar();
+      });
     const botonesQuitar = document.querySelectorAll(".btnQuitar");
     for (const boton of botonesQuitar) {
       boton.onclick = (event) => {
@@ -265,7 +279,7 @@ class Carrito {
     document.getElementById("totalCarrito").innerText = +Math.trunc(this.total);
   }
   quitar(id) {
-    const indice = this.carrito.findIndex((producto) => producto.id === id);
+    const indice = this.carrito.findIndex((producto) => producto.id == id);
     if (this.carrito[indice].cantidad > 1) {
       this.carrito[indice].cantidad--;
     } else {
@@ -273,14 +287,7 @@ class Carrito {
     }
     localStorage.setItem("carrito", JSON.stringify(this.carrito));
     this.listar();
-    document
-      .getElementById("botonComprar")
-      .addEventListener("click", (event) => {
-        event.preventDefault();
-
-        // Vacíamos el carrito
-        carrito.vaciar();
-      });
+    
   }
 }
 
@@ -362,31 +369,11 @@ function cargarProductos(productos) {
       const id = boton.dataset.id;
       const producto = registrosPorId(id);
       carrito.agregarProductoCarrito(producto[0]);
+  
     });
   }
 }
-const botonesAgregar = document.querySelectorAll(".botonAgregar");
-for (const boton of botonesAgregar) {
-  boton.addEventListener("click", (e) => {
-    e.preventDefault();
-    const id = boton.dataset.id;
-    const producto = registrosPorId(id);
-    carrito.agregarProductoCarrito(producto[0]);
-  });
-}
-const botonAgregar = document.querySelectorAll(".botonAgregar");
-for (const boton of botonesAgregar) {
-  boton.addEventListener("click", (e) => {
-    e.preventDefault();
-    const id = boton.dataset.id;
-    const producto = registrosPorId(id);
-    carrito.agregarProductoCarrito(producto[12]);
-  });
-}
-
 
 let carrito = new Carrito();
 
 cargarProductos(sistema.productos);
-
-
