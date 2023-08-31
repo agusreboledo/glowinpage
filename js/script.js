@@ -243,7 +243,7 @@ class Carrito {
             Vaciar Carrito
           </a>
         </div>`;
-        divCarrito.appendChild(card)
+      divCarrito.appendChild(card);
 
       this.total += producto.precio * producto.cantidad;
       this.totalProductos += producto.cantidad;
@@ -260,7 +260,7 @@ class Carrito {
         event.preventDefault();
         Toastify({
           text: "Gracias por su compra",
-  
+
           duration: 3000,
         }).showToast();
 
@@ -287,7 +287,6 @@ class Carrito {
     }
     localStorage.setItem("carrito", JSON.stringify(this.carrito));
     this.listar();
-    
   }
 }
 
@@ -369,7 +368,11 @@ function cargarProductos(productos) {
       const id = boton.dataset.id;
       const producto = registrosPorId(id);
       carrito.agregarProductoCarrito(producto[0]);
-  
+      Toastify({
+        text: "Producto agregado",
+
+        duration: 3000,
+      }).showToast();
     });
   }
 }

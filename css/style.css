@@ -1534,7 +1534,7 @@ body {
   border-bottom: solid thin #e1e1e1;
 }
 .container nav i {
-  font-size: 3rem;
+  font-size: 2rem;
   cursor: pointer;
 }
 
@@ -1553,6 +1553,7 @@ body {
   text-align: center;
   padding: 10px 0 0 0;
   border-top: solid thin gray;
+  
 }
 
 .container .nav-cart i:hover .buy-card > .lista_de_productos {
@@ -1575,6 +1576,7 @@ body {
 .lista_de_productos p {
   width: 300px;
   font-size: 1.4rem;
+  
 }
 
 .lista_de_productos p:nth-child(3) {
@@ -1598,13 +1600,14 @@ body {
 .cantidadProductos {
   display: none;
 }
+
 .container nav i:hover .buy-card > .cantidadProductos {
   display: block !important;
   font-size: 15px;
 }
 
 #botonComprar {
-  display: none;
+  
   border: 1px solid black;
   border-radius: 5px;
 }
@@ -1618,4 +1621,15 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+.contenedorCarrito {
+  height: 100%;
+  background-color: white;
+  
+  }
+
+.producto {
+background-color: white;
+
 }
